@@ -13,7 +13,7 @@ from distutils.core import setup
 
 setup(
     name='pyshiki',
-    version='1.1.1',
+    version='1.1.2',
     author='OlegWock',
     author_email='olegwock@gmail.com',
     url='https://github.com/OlegWock/PyShiki',
