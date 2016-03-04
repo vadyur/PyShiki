@@ -1,5 +1,5 @@
 # PyShiki
-Python lib for working with [shikimori.org])(http://shikimori.org/) api
+Python lib for working with [shikimori.org](http://shikimori.org/) api
 
 ****
 
