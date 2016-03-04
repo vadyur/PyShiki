@@ -1,6 +1,15 @@
 # PyShiki
 Python lib for working with [shikimori.org](http://shikimori.org/) api
 
+Installing:
+```
+# Linux:
+sudo pip3 install pyshiki
+
+# Windows:
+pip3 install pyshiki
+```
+
 ****
 
 ## Examples
