@@ -53,7 +53,7 @@ class Request(object):
 
     def __call__(self, path=None, **method_args):
         if path:
-            self._method_name += "/" + path
+            self._method_name += "/" + str(path)
         self._method_args = method_args
         return self
 
