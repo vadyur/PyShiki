@@ -51,8 +51,9 @@ class Request(object):
         self._api = api
         self._method_name = method_name
 
-    def __call__(self, path, **method_args):
-        self._method_name += "/" + path
+    def __call__(self, path=None, **method_args):
+        if path:
+            self._method_name += "/" + path
         self._method_args = method_args
         return self
 
