@@ -32,9 +32,9 @@ pprint(ls)
 #     "name": "test"
 #   }
 # }
-dev = api.animes("devices" device={"user_id": 23456813,
-                                   "token": "test",
-                                   "platform": "ios",
-                                   "name": "test"}).post()
+dev = api.animes("devices", device={"user_id": 23456813,
+                                    "token": "test",
+                                    "platform": "ios",
+                                    "name": "test"}).post()
 pprint(dev)
 ```
