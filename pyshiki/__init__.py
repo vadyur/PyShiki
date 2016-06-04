@@ -2,3 +2,5 @@
 #-*- coding: UTF-8 -*-
 
 from .shikimoriapi import *
+
+__all__ = ['Api']

@@ -33,8 +33,13 @@ pprint(ls)
 #   }
 # }
 dev = api.devices(device={"user_id": 23456813,
-                                    "token": "test",
-                                    "platform": "ios",
-                                    "name": "test"}).post()
+                          "token": "test",
+                          "platform": "ios",
+                          "name": "test"}).post()
 pprint(dev)
 ```
+
+## Changelog
+#### v 1.1.3
++ Refactored code
++ Changed license to MIT
