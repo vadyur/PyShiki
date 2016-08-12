@@ -43,3 +43,6 @@ pprint(dev)
 #### v 1.1.3
 + Refactored code
 + Changed license to MIT
+
+#### v 1.1.4
++ Fixed error with api v2 [#1](https://github.com/OlegWock/PyShiki/issues/1)

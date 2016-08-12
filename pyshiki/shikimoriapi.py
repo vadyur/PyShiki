@@ -16,13 +16,18 @@ class Api(object):
 
         self.headers = {'X-User-Nickname': self.nick,
                         'X-User-Api-Access-Token': self.token,
-                        'User-Agent': 'PyShiki'}
+                        'User-Agent': 'PyShiki v1.1.4'}
         self.session = requests.Session() # Session for http-requests
         self.session.headers.update(self.headers)
 
     def _makeReq(self, request, meth):
         args = request._method_args
-        req_url = self.root_url + request._method_name
+        # Временная (надеюсь) заплатка
+        if 'user_rates' in request.method_name and not "cleanup" in request.method_name and not "reset" in request.method_name:
+            req_url = self.root_url + "v2/" + request._method_name
+        else:
+            req_url = self.root_url + request._method_name
+
         if meth == 'get':
             r = self.session.get(req_url, params=args)
         elif meth == 'post':
