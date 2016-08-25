@@ -23,7 +23,7 @@ class Api(object):
     def _makeReq(self, request, meth):
         args = request._method_args
         # Временная (надеюсь) заплатка
-        if 'user_rates' in request.method_name and not "cleanup" in request.method_name and not "reset" in request.method_name:
+        if 'user_rates' in request._method_name and not "cleanup" in request._method_name and not "reset" in request._method_name:
             req_url = self.root_url + "v2/" + request._method_name
         else:
             req_url = self.root_url + request._method_name
