@@ -46,3 +46,7 @@ pprint(dev)
 
 #### v 1.1.4
 + Fixed error with api v2 [#1](https://github.com/OlegWock/PyShiki/issues/1)
+
+#### v 1.1.6
++ Fixed error with api v2 (one more) [#2](https://github.com/OlegWock/PyShiki/issues/2)
++ Some license fixes

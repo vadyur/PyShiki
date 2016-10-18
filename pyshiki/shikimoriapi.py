@@ -20,10 +20,22 @@ class Api(object):
         self.session = requests.Session() # Session for http-requests
         self.session.headers.update(self.headers)
 
+    def _isv2(method_name):
+        args_list = method_name.split("/")
+        args = dict(enumerate(args_list))
+
+        if args.get(0) == 'user_rates' and not args.get(2) in ("cleanup", "reset"):
+            return True
+        if args.get(0) == "topics":
+            return True
+        if args.get(0) == "users" and args.get(2) == "ignore":
+            return True
+
+        return False
+
     def _makeReq(self, request, meth):
         args = request._method_args
-        # Временная (надеюсь) заплатка
-        if 'user_rates' in request._method_name and not "cleanup" in request._method_name and not "reset" in request._method_name:
+        if self._isv2(request._method_name):
             req_url = self.root_url + "v2/" + request._method_name
         else:
             req_url = self.root_url + request._method_name
