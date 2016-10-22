@@ -20,7 +20,7 @@ class Api(object):
         self.session = requests.Session() # Session for http-requests
         self.session.headers.update(self.headers)
 
-    def _isv2(method_name):
+    def _isv2(self, method_name):
         args_list = method_name.split("/")
         args = dict(enumerate(args_list))
 
