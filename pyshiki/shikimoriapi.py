@@ -3,7 +3,7 @@
 import requests
 
 class Api(object):
-    def __init__(self, nick, passwd, root_url='http://shikimori.org/api/'):
+    def __init__(self, nick, passwd, root_url='http://shikimori.org/api/', token=None):
         super(Api, self).__init__()
 
         self.root_url = root_url
@@ -11,9 +11,11 @@ class Api(object):
         self.nick = nick
         self.passwd = passwd
 
-        token_url = self.root_url + 'access_token?nickname={}&password={}'.format(self.nick, self.passwd)
-        self.token = requests.get(token_url).json()['api_access_token']
-
+        if not token:
+            token_url = self.root_url + 'access_token?nickname={}&password={}'.format(self.nick, self.passwd)
+            self.token = requests.get(token_url).json()['api_access_token']
+        else:
+            self.token = token
         self.headers = {'X-User-Nickname': self.nick,
                         'X-User-Api-Access-Token': self.token,
                         'User-Agent': 'PyShiki v1.1.4'}
